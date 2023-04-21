@@ -7,6 +7,7 @@ export default class ControllerFilm {
     
     constructor() {
         this.displayBestFilm();
+        // this.displayFilms();
     }
 
     async displayBestFilm() {
@@ -15,8 +16,27 @@ export default class ControllerFilm {
         let Api_response_film = await new ModelApi(api_url_film).getResponse();
         let Film = await new ModelFilm(Api_response_film);
         let View = await new ViewFilm(Film);
+        let fixation = await document.querySelector("main");
+        View.displayBestFilm(fixation);
+        let btn = await document.querySelector(".btn_best_film");
+        btn.addEventListener("click", () => {
+            View.displayModal(fixation);
+        })
+        
 
-    }
+    }   
+
+    // async displayFilms() {
+    //     let Api = await new ModelApi("http://127.0.0.1:8001/api/v1/titles/?sort_by=-imdb_score").getResults();
+    //     for (let i = 0; i < Api.length; i++) {
+    //         let api_url_film = await Api[i].url;
+    //         let Api_response_film = await new ModelApi(api_url_film).getResponse();
+    //         let Film = await new ModelFilm(Api_response_film);
+    //         let View = await new ViewFilm(Film);
+    //         let fixation = await document.createElement("div");
+    //         fixation.classList.add("carousel_container");
+    //         View.displayCarousel(fixation);
+    //     }
 
 
     
