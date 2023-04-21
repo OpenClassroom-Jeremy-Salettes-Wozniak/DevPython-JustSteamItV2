@@ -1,16 +1,18 @@
-
+// Controllers
+import FilmController from "./controllers/ControllerFilm.js";
 
 class Main {
 
     constructor() {
+        this.filmController = new FilmController();
         this.init();
-        this.film__by_imdb();
-        this.films_by_imdb();
-        this.film_by_genres();
     }
 
     init() {
         console.log("main init");
+        this.film__by_imdb();
+        this.films_by_imdb();
+        this.film_by_genres();
     }
     
     async film__by_imdb(){

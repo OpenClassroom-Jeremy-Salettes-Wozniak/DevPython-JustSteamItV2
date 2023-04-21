@@ -1,7 +1,0 @@
-{
-    "port": 8000,
-    "api": "http://localhost:{port}/api/",
-    "api_titles": "http://localhost:{port}/api/v1/titles/",
-    "api_genres": "http://localhost:{port}/api/v1/genres/",
-    "api_best_title": "http://localhost:{port}/api/v1/best_titles/"
-}

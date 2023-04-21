@@ -1,4 +1,4 @@
-class api{
+export class ModelApi{
 
     constructor(url){
         this.url = url;
@@ -9,4 +9,11 @@ class api{
         let data = await response.json();
         return data;
     }
+
+    async getResults(){
+        let data = await this.getResponse();
+        return data.results;
+    }
+    
+
 }
