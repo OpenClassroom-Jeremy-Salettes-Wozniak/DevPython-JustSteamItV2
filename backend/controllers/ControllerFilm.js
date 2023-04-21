@@ -20,6 +20,9 @@ export default class ControllerFilm {
         View.displayBestFilm(fixation);
         let btn = await document.querySelector(".btn_best_film");
         btn.addEventListener("click", () => {
+            if (document.querySelector(".modal") != null) {
+                document.querySelector(".modal").remove();
+            }
             View.displayModal(fixation);
         })
         
