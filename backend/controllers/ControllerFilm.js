@@ -6,8 +6,7 @@ import { ViewFilm } from '../views/ViewFilm.js';
 export default class ControllerFilm {
     
     constructor() {
-        this.displayBestFilm();
-        // this.displayFilms();
+
     }
 
     async displayBestFilm() {
@@ -29,7 +28,32 @@ export default class ControllerFilm {
 
     }   
 
-    // async displayFilms() {
+    async displayBestFilms() {
+        let Api = await new ModelApi("http://127.0.0.1:8001/api/v1/titles/?sort_by=-imdb_score").getResults();
+        let fixation = await document.querySelector("main");
+        let container_carousel = await document.createElement("div");
+        container_carousel.classList.add("container_carousel");
+        fixation.appendChild(container_carousel);
+        
+        for (let i = 0; i < Api.length; i++) {
+            let api_url_film = await Api[i].url;
+            let Api_response_film = await new ModelApi(api_url_film).getResponse();
+            let Film = await new ModelFilm(Api_response_film);
+            let View = await new ViewFilm(Film);
+            let fixation_caroussel = await document.querySelector(".carousel_container");
+            View.displayCarousel(container_carousel);
+            
+            // Si click sur l'image du carousel, afficher le modal
+            let image = await document.querySelectorAll(".carousel img");
+            image[i].addEventListener("click", () => {
+                if (document.querySelector(".modal") != null) {
+                    document.querySelector(".modal").remove();
+                }
+                View.displayModal(fixation);
+            }
+            )
+        }
+    }
     //     let Api = await new ModelApi("http://127.0.0.1:8001/api/v1/titles/?sort_by=-imdb_score").getResults();
     //     for (let i = 0; i < Api.length; i++) {
     //         let api_url_film = await Api[i].url;

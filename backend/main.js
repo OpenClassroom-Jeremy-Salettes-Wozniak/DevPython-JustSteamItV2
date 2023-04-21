@@ -8,16 +8,19 @@ class Main {
         this.init();
     }
 
-    init() {
-        console.log("main init");
-        this.film__by_imdb();
-        this.films_by_imdb();
-        this.film_by_genres();
+    async init() {
+        try {
+            await this.filmController.displayBestFilm();
+            await this.filmController.displayBestFilms();
+        }
+        catch (e) {
+            console.log("Main.init() error : " + e);
+        }
     }
     
     async film__by_imdb(){
         try {
-            // ...
+            await this.filmController.displayBestFilm();
         }
         catch (e) {
             console.log("Main.film__by_imdb() error : " + e);
@@ -27,7 +30,7 @@ class Main {
 
     async films_by_imdb(){
         try {
-            // ...
+            await this.filmController.displayBestFilms();
         }
         catch (e) {
             console.log("Main.films_by_imdb() error : " + e);

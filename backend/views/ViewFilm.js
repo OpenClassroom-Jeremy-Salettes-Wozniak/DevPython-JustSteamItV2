@@ -60,18 +60,18 @@ export class ViewFilm{
     //     }
     // }
 
-    // async displayCarousel() {
+    async displayCarousel(fixation) {
         
-    //     let carousel = document.createElement("div");
-    //     carousel.classList.add("carousel");
+        let carousel = document.createElement("div");
+        carousel.classList.add("carousel");
 
-    //     let image = document.createElement("img");
-    //     image.src = this.film.image_url;
-    //     image.alt = this.film.title;
+        let image = document.createElement("img");
+        image.src = this.film.image_url;
+        image.alt = this.film.title;
 
-    //     carousel.appendChild(image);
-    //     this.main.appendChild(carousel);
-    // }
+        carousel.appendChild(image);
+        fixation.appendChild(carousel);
+    }
 
     async displayModal(fixation) {
         let modal = document.createElement("div");
@@ -140,17 +140,5 @@ export class ViewFilm{
 
 
     }
-
-    // async btnVoirFilm() {
-    //     let btn = document.createElement("button");
-    //     btn.classList.add("btn");
-    //     btn.innerHTML = "Voir le film";
-    //     this.main.appendChild(btn);
-
-    //     btn.addEventListener("click", (e) => {
-    //         e.preventDefault();
-    //         this.displayModal();
-    //     });
-    // }
 
 }

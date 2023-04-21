@@ -1,0 +1,31 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding: 1rem;
+    background-color: #262626;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    
+}
+
+footer{
+    padding: 1rem;
+    background-color: #262626;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    height: 100vh;
+}
+
+.container_carousel{
+    margin-block: 1rem;
+    display: flex;
+}
