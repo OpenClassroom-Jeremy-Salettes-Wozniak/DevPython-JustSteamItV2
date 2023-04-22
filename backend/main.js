@@ -12,6 +12,7 @@ class Main {
         try {
             await this.filmController.displayBestFilm();
             await this.filmController.displayBestFilms();
+            console.log("docker test")
         }
         catch (e) {
             console.log("Main.init() error : " + e);

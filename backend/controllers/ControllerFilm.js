@@ -3,6 +3,7 @@ import { ModelFilm } from '../models/ModelFilm.js';
 
 import { ViewFilm } from '../views/ViewFilm.js';
 
+let port = 8000;
 export default class ControllerFilm {
     
     constructor() {
@@ -10,7 +11,7 @@ export default class ControllerFilm {
     }
 
     async displayBestFilm() {
-        let Api = await new ModelApi("http://127.0.0.1:8001/api/v1/titles/?sort_by=-imdb_score").getResults();
+        let Api = await new ModelApi("http://127.0.0.1:"+port+"/api/v1/titles/?sort_by=-imdb_score").getResults();
         let api_url_film = await Api[0].url;
         let Api_response_film = await new ModelApi(api_url_film).getResponse();
         let Film = await new ModelFilm(Api_response_film);
@@ -29,7 +30,7 @@ export default class ControllerFilm {
     }   
 
     async displayBestFilms() {
-        let Api = await new ModelApi("http://127.0.0.1:8001/api/v1/titles/?sort_by=-imdb_score").getResults();
+        let Api = await new ModelApi("http://127.0.0.1:"+port+"/api/v1/titles/?sort_by=-imdb_score&page_size=10").getResults();
         let fixation = await document.querySelector("main");
         let container_carousel = await document.createElement("div");
         container_carousel.classList.add("container_carousel");

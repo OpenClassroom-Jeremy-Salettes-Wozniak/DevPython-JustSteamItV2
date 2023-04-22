@@ -34,32 +34,7 @@ export class ViewFilm{
             console.log("ViewFilm.displayFilm() error: " + error);
         }
     }
-
-    // async displayFilm(fixation) {
-    //     try {
-    //         let container = document.createElement("div");
-    //         container.classList.add("container");
     
-    //         let image = document.createElement("img");
-    //         image.src = this.film.image_url;
-    //         image.alt = this.film.title;
-    
-    //         let h3 = document.createElement("h3");
-    //         h3.innerHTML = this.film.title;
-    
-    //         let description = document.createElement("p");
-    //         description.innerHTML = this.film.description;
-    
-    //         // Fixe sur le  container sur le main
-    //         container.appendChild(image);
-    //         container.appendChild(h3);
-    //         container.appendChild(description);
-    //         fixation.appendChild(container);
-    //     } catch (error) {
-    //         console.log("ViewFilm.displayFilm() error: " + error);
-    //     }
-    // }
-
     async displayCarousel(fixation) {
         
         let carousel = document.createElement("div");
