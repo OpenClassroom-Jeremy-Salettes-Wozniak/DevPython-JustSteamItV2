@@ -12,6 +12,7 @@ class Main {
         try {
             await this.filmController.displayBestFilm();
             await this.filmController.displayBestFilms();
+            await this.filmController.displayBestFilmsByGenres();
         }
         catch (e) {
             console.log("Main.init() error : " + e);
@@ -39,6 +40,7 @@ class Main {
 
     async film_by_genres(){
         try {
+            await this.filmController.displayBestFilmsByGenres();
             
         }
         catch (e) {

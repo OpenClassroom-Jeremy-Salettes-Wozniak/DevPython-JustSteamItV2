@@ -43,6 +43,8 @@ export class ViewFilm{
         let image = document.createElement("img");
         image.src = this.film.image_url;
         image.alt = this.film.title;
+        image.classList.add("image_carousel");
+        image.classList.add("image_"+this.film.id);
 
         carousel.appendChild(image);
         fixation.appendChild(carousel);
@@ -62,8 +64,8 @@ export class ViewFilm{
         labelImage.classList.add("label_image", "label");
         
         // TITRE
-        let h2 = document.createElement("h2");
-        h2.innerHTML = this.film.title;
+        let h3 = document.createElement("h3");
+        h3.innerHTML = this.film.title;
 
         let labelTitle = document.createElement("label");
         labelTitle.innerHTML = "Titre  :";
@@ -161,7 +163,7 @@ export class ViewFilm{
     
         fixation.appendChild(modal);
         modal.appendChild(image);
-        modal.appendChild(h2);
+        modal.appendChild(h3);
         modal.appendChild(genre);
         modal.appendChild(date);
         modal.appendChild(rated);
@@ -174,8 +176,8 @@ export class ViewFilm{
         modal.appendChild(description);
         modal.appendChild(btn);
 
-        // ajoute le labelTitle avant l'h2
-        modal.insertBefore(labelTitle, h2);
+        // ajoute le labelTitle avant l'h3
+        modal.insertBefore(labelTitle, h3);
         // ajoute le labelGenre avant l'genre
         modal.insertBefore(labelGenre, genre);
         // ajoute le labelDate avant l'date

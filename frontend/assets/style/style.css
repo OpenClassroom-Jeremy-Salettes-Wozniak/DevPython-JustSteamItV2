@@ -22,11 +22,14 @@ footer{
 }
 
 main{
-    height: 100vh;
     background-color: #262626;
 }
 
-
+h2{
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+}
 /* BESTFILM */
 
 
@@ -75,7 +78,6 @@ main{
     position: absolute;
     top: 0;
     width: 100%;    
-    height: 100vh;
     font-size: 1.5rem;
     overflow-y: auto;
 }
@@ -93,6 +95,12 @@ main{
     width: 100%;
     height: 55vh;
     filter: brightness(70%) blur(2px);
+}
+
+.modal h3, p, label{
+    padding-inline-start: 2%;
+    padding-block: 1%;
+    font-size: 1.5rem;
 }
 
 .modal button{
@@ -113,12 +121,25 @@ main{
 .carousel{
     display: contents;
 }
+
+.carousel-arrow{
+    color: #fff;
+}
+
 .container_carousel{
     margin-block: 1rem;
     display: flex;
+    justify-content: center;
+    /* overflow: hidden; */
+
 }
 
 .container_carousel img{
     filter: brightness(70%) blur(1px);
     cursor: pointer;
+
+}
+
+.fleche_droite{
+    padding-inline: 1rem;
 }
