@@ -52,42 +52,103 @@ export class ViewFilm{
         let modal = document.createElement("div");
         modal.classList.add("modal");
         
+        // IMAGE
         let image = document.createElement("img");
         image.src = this.film.image_url;
         image.alt = this.film.title;
 
+        let labelImage = document.createElement("label");
+        labelImage.innerHTML = "Image :";
+        labelImage.classList.add("label_image", "label");
+        
+        // TITRE
         let h2 = document.createElement("h2");
         h2.innerHTML = this.film.title;
 
+        let labelTitle = document.createElement("label");
+        labelTitle.innerHTML = "Titre  :";
+        labelTitle.classList.add("label_title", "label");
+
+
+        // GENRE
         let genre = document.createElement("p");
         genre.innerHTML = this.film.genres;
-
+        
+        let labelGenre = document.createElement("label");
+        labelGenre.innerHTML = "Genre :";
+        labelGenre.classList.add("label_genre", "label");
+        
+        // DATE
         let date = document.createElement("p");
         date.innerHTML = this.film.date_published;
-
+        
+        let labelDate = document.createElement("label");
+        labelDate.innerHTML = "Date :";
+        labelDate.classList.add("label_date", "label");
+        
+        // RATED
         let rated = document.createElement("p");
         rated.innerHTML = this.film.rated;
-
+        
+        let labelRated = document.createElement("label");
+        labelRated.innerHTML = "Rated :";
+        labelRated.classList.add("label_rated", "label");
+        
+        // SCORE
         let score = document.createElement("p");
         score.innerHTML = this.film.imdb_score;
-
+        
+        let labelScore = document.createElement("label");
+        labelScore.innerHTML = "Score :";
+        labelScore.classList.add("label_score", "label");
+        
+        // DIRECTOR
         let director = document.createElement("p");
         director.innerHTML = this.film.directors;
-
+        
+        let labelDirector = document.createElement("label");
+        labelDirector.innerHTML = "Director :";
+        labelDirector.classList.add("label_director", "label");
+        
+        // ACTORS
         let actors = document.createElement("p");
         actors.innerHTML = this.film.actors;
 
+        let labelActors = document.createElement("label");
+        labelActors.innerHTML = "Actors :";
+        labelActors.classList.add("label_actors", "label");
+
+        // DUREE
         let duree = document.createElement("p");
         duree.innerHTML = this.film.duration;
-
+        
+        let labelDuree = document.createElement("label");
+        labelDuree.innerHTML = "Duree :";
+        labelDuree.classList.add("label_duree", "label");
+        
+        // PAYS
         let pays = document.createElement("p");
         pays.innerHTML = this.film.countries;
-
+        
+        let labelPays = document.createElement("label");
+        labelPays.innerHTML = "Pays :";
+        labelPays.classList.add("label_pays", "label");
+        
+        // BOX OFFICE
         let box_office = document.createElement("p");
         box_office.innerHTML = this.film.worldwide_gross_income;
-
+        
+        let labelBox_office = document.createElement("label");
+        labelBox_office.innerHTML = "Box Office :";
+        labelBox_office.classList.add("label_box_office", "label");
+        
+        // DESCRIPTION
         let description = document.createElement("p");
         description.innerHTML = this.film.description;
+        
+        let labelDescription = document.createElement("label");
+        labelDescription.innerHTML = "Description :";
+        labelDescription.classList.add("label_description", "label");
 
         let btn = document.createElement("button");
         btn.classList.add("btn");
@@ -112,6 +173,29 @@ export class ViewFilm{
         modal.appendChild(box_office);
         modal.appendChild(description);
         modal.appendChild(btn);
+
+        // ajoute le labelTitle avant l'h2
+        modal.insertBefore(labelTitle, h2);
+        // ajoute le labelGenre avant l'genre
+        modal.insertBefore(labelGenre, genre);
+        // ajoute le labelDate avant l'date
+        modal.insertBefore(labelDate, date);
+        // ajoute le labelRated avant l'rated
+        modal.insertBefore(labelRated, rated);
+        // ajoute le labelScore avant l'score
+        modal.insertBefore(labelScore, score);
+        // ajoute le labelDirector avant l'director
+        modal.insertBefore(labelDirector, director);
+        // ajoute le labelActors avant l'actors
+        modal.insertBefore(labelActors, actors);
+        // ajoute le labelDuree avant l'duree
+        modal.insertBefore(labelDuree, duree);
+        // ajoute le labelPays avant l'pays
+        modal.insertBefore(labelPays, pays);
+        // ajoute le labelBoxOffice avant l'box_office
+        modal.insertBefore(labelBox_office, box_office);
+        // ajoute le labelDescription avant l'description
+        modal.insertBefore(labelDescription, description);
 
 
     }
