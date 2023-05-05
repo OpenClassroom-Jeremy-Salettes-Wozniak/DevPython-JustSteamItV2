@@ -40,7 +40,7 @@ class Main {
 
     async film_by_genres(){
         try {
-            await this.filmController.displayBestFilmsByGenres();
+            await this.filmController.displayBestFilmByGenres();
             
         }
         catch (e) {

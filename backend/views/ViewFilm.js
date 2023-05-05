@@ -45,9 +45,30 @@ export class ViewFilm{
         image.alt = this.film.title;
         image.classList.add("image_carousel");
         image.classList.add("image_"+this.film.id);
-
         carousel.appendChild(image);
         fixation.appendChild(carousel);
+    }
+
+    async displayBestFilmsByGenres(fixation, genre) {
+        
+        try {
+            if (this.film.image_url == null) {
+            } else {
+                    
+                let carousel = document.createElement("div");
+                carousel.classList.add("carousel");
+        
+                let image = document.createElement("img");
+                image.src = this.film.image_url;
+                image.alt = this.film.title;
+                image.classList.add("image_carousel");
+                image.classList.add("image_"+this.film.id + "_" + genre);
+                carousel.appendChild(image);
+                fixation.appendChild(carousel);
+            }
+        } catch (error) {
+            console.log("ViewFilm.displayBestFilmsByGenres() error: " + error);
+        }
     }
 
     async displayModal(fixation) {
