@@ -36,16 +36,20 @@ export class ViewFilm{
     }
     
     async displayCarousel(fixation) {
-        
+        // CAROUSEL
         let carousel = document.createElement("div");
         carousel.classList.add("carousel");
 
+        // IMAGE
         let image = document.createElement("img");
         image.src = this.film.image_url;
         image.alt = this.film.title;
         image.classList.add("image_carousel");
         image.classList.add("image_"+this.film.id);
+
+        // ON AJOUTE L'IMAGE AU CAROUSEL
         carousel.appendChild(image);
+        // ON AJOUTE LE CAROUSEL A LA FIXATION DEFINIE
         fixation.appendChild(carousel);
     }
 
@@ -55,15 +59,19 @@ export class ViewFilm{
             if (this.film.image_url == null) {
             } else {
                     
+                // CAROUSEL
                 let carousel = document.createElement("div");
                 carousel.classList.add("carousel");
         
+                // IMAGE
                 let image = document.createElement("img");
                 image.src = this.film.image_url;
                 image.alt = this.film.title;
                 image.classList.add("image_carousel");
                 image.classList.add("image_"+this.film.id + "_" + genre);
+                // ON AJOUTE L'IMAGE AU CAROUSEL
                 carousel.appendChild(image);
+                // ON AJOUTE LE CAROUSEL A LA FIXATION DEFINIE
                 fixation.appendChild(carousel);
             }
         } catch (error) {
@@ -72,6 +80,7 @@ export class ViewFilm{
     }
 
     async displayModal(fixation) {
+        // MODAL
         let modal = document.createElement("div");
         modal.classList.add("modal");
         
@@ -88,15 +97,15 @@ export class ViewFilm{
         let h3 = document.createElement("h3");
         h3.innerHTML = this.film.title;
 
+        // DESCRIPTION
         let labelTitle = document.createElement("label");
         labelTitle.innerHTML = "Titre  :";
         labelTitle.classList.add("label_title", "label");
 
-
         // GENRE
         let genre = document.createElement("p");
         genre.innerHTML = this.film.genres;
-        
+
         let labelGenre = document.createElement("label");
         labelGenre.innerHTML = "Genre :";
         labelGenre.classList.add("label_genre", "label");
@@ -173,6 +182,7 @@ export class ViewFilm{
         labelDescription.innerHTML = "Description :";
         labelDescription.classList.add("label_description", "label");
 
+        // BOUTON FERMER
         let btn = document.createElement("button");
         btn.classList.add("btn");
         btn.innerHTML = "Fermer";
@@ -182,6 +192,7 @@ export class ViewFilm{
         });
 
     
+        // On ajoute les éléments au DOM
         fixation.appendChild(modal);
         modal.appendChild(image);
         modal.appendChild(h3);
@@ -197,27 +208,27 @@ export class ViewFilm{
         modal.appendChild(description);
         modal.appendChild(btn);
 
-        // ajoute le labelTitle avant l'h3
+        // ajoute le labelTitle avant h3
         modal.insertBefore(labelTitle, h3);
-        // ajoute le labelGenre avant l'genre
+        // ajoute le labelGenre avant genre
         modal.insertBefore(labelGenre, genre);
-        // ajoute le labelDate avant l'date
+        // ajoute le labelDate avant date
         modal.insertBefore(labelDate, date);
-        // ajoute le labelRated avant l'rated
+        // ajoute le labelRated avant rated
         modal.insertBefore(labelRated, rated);
-        // ajoute le labelScore avant l'score
+        // ajoute le labelScore avant score
         modal.insertBefore(labelScore, score);
-        // ajoute le labelDirector avant l'director
+        // ajoute le labelDirector avant director
         modal.insertBefore(labelDirector, director);
-        // ajoute le labelActors avant l'actors
+        // ajoute le labelActors avant actors
         modal.insertBefore(labelActors, actors);
-        // ajoute le labelDuree avant l'duree
+        // ajoute le labelDuree avant duree
         modal.insertBefore(labelDuree, duree);
-        // ajoute le labelPays avant l'pays
+        // ajoute le labelPays avant pays
         modal.insertBefore(labelPays, pays);
-        // ajoute le labelBoxOffice avant l'box_office
+        // ajoute le labelBoxOffice avant box_office
         modal.insertBefore(labelBox_office, box_office);
-        // ajoute le labelDescription avant l'description
+        // ajoute le labelDescription avant description
         modal.insertBefore(labelDescription, description);
 
 
